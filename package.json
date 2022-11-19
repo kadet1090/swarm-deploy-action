@@ -1,0 +1,26 @@
+{
+  "name": "swarm-deploy-action",
+  "version": "1.0.0",
+  "description": "Deploy service using ansibla via API Server",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+    "all": "npm run lint && npm run prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadet1090/swarm-deploy-action.git"
+  },
+  "author": "Kacper Donat <kadet1090@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "axios": "^1.1.3",
+    "yaml": "^2.1.3"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.31.1",
+    "eslint": "^8.0.0"
+  }
+}

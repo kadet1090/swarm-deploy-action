@@ -1,0 +1,19 @@
+name: "Deploy echo service"
+on:
+  workflow_dispatch:
+
+jobs:
+  # test action works running from the graph
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ./
+      with:
+        api-token: ${{ secrets.API_SERVER_TOKEN }}
+        service: echo
+        vars: |
+          foo: 'bar'
+          arr: ['foo', 'bar']
+          obj: 
+            foo: 'bar'

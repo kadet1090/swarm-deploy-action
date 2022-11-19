@@ -1,0 +1,22 @@
+name: "Kadet's Deploy Action"
+description: 'Deploy service using ansibla via API Server'
+inputs:
+  api-server:
+    description: 'URL to API Server which will be used for deployment'
+    required: true
+    default: 'https://mgmt.kadet.net'
+  api-token:  
+    description: 'API Token used do deploy the service'
+    required: true
+  service:  
+    description: 'Name of the service to be deployed'
+    required: true
+  vars:
+    description: 'Variables that will be passed to the deployment'
+    required: false
+outputs:
+  deployment-id:
+    description: 'Deployment identifier at API Server'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
